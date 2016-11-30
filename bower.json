@@ -1,0 +1,25 @@
+{
+  "name": "the-bugs",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Sean Donnelly <sean@topcashback.co.uk>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "getrekked"
+  ],
+  "homepage": "https://github.com/Donners45/the-bugs",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+   "dependencies": {
+        "jquery": "1.11.1"
+      
+    }
+}
