@@ -26,15 +26,15 @@ module.exports = function(grunt) {
 			}
 		},
 
-		sass: {                             
-			dest: {                         
-                options: {                      
-                    style: 'compressed'
+		less: {                             
+			 development: {
+                options: {
+                    paths: ['src/css']
                 },
-                files: {                    
-                    'dest/css/main.css': 'src/css/main.scss'
+                files: {
+                   'dest/css/main.css': 'src/css/main.less'
                 }
-			}
+            }
 		}
 
 	});
@@ -42,9 +42,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-less');
 	
 
-	grunt.registerTask('default', ['uglify', 'jshint', 'copy', 'sass']);
+	grunt.registerTask('default', ['uglify', 'jshint', 'copy', 'less']);
 
 };
