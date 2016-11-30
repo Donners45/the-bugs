@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Donners45/the-bugs#readme",
   "dependencies": {
     "grunt": "^0.4.2",
+    "grunt-cli": "latest",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-sass": "^1.0.0",
