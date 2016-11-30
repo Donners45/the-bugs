@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-"scripts": {
-  "start": "node index.js",
-  "postinstall": "bower cache clean && bower install && grunt"
+  "scripts": {
+    "start": "node index.js",
+    "postinstall": "bower cache clean && bower install && grunt"
   },
   "repository": {
     "type": "git",
