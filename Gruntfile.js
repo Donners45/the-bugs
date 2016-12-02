@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     
             build: {
             	src: 'src/js/*.js',
-          		dest: 'dest/<%= pkg.name %>.min.js'
+          		dest: 'dest/js/app.min.js'
             }
          },
 		copy: {
