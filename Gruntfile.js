@@ -20,16 +20,26 @@ module.exports = function(grunt) {
 		copy: {
 			target:{
                 files: [
-                    {
+                    {	//Source HTML
                         cwd: 'src/',
                         src: '**/*.html',
                         dest: 'dest/',
                         expand: true
                     } ,
-                    {
-                        src:['bower_components/jquery/dist/jquery.min.js'],
-                        dest: 'dest/js/vendor/jquery.min.js'
-                    } 
+                    {	// Vendor JS
+						flatten: true, 
+						expand: true, 
+						src: ['jquery/dist/jquery.min.js', 'fullpage/dist/jquery.fullpage.min.js'], 
+						dest: 'dest/js/vendor/', 
+						cwd: 'bower_components/'
+                    },
+					{ //Vendor CSS
+						flatten: true, 
+						expand: true, 
+						src: ['fullpage/dist/jquery.fullpage.min.css'], 
+						dest: 'dest/css/vendor/', 
+						cwd: 'bower_components/'
+					}
                 ]
             } 
 		},
