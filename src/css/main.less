@@ -1,24 +1,53 @@
+body{
+    h1{
+        font-size:9em;
+    }
+
+    font-family: Consolas,monaco,monospace;
+}
+
 #fullpage{
     .section{
         background-color: #abcbe6;
-        font-family: Consolas,monaco,monospace;
+
         text-align: center;
     }
 }
 
 .half-box{
+    &:first-of-type{
+        background-color:firebrick;
+    }
     padding-top:20px;
     height:50%;
     width:100%;
 }
 
 a{
-    width: 200px;
-    height: 90px;
+    font-size:6em;
+    width: 5em;
+    height: 2em;
     display: block;
     margin: auto;
-    padding-top: 50px;
-    border-radius: 10px;
-    background-color:black;
+    padding-top: .5em;
+    border-radius: 154px;
+    background-color: black;
     color: white;
+}
+
+.race-wrapper{
+    margin-top: 50%;
+    height: 150px;
+
+    .spot{
+        height: 80px;
+        width: 80px;
+        float: left;
+        background-color:#545153;
+        border-radius: 50%;
+        margin-left: 16px;
+        &.active {
+            background-color: white;
+        }
+    }
 }

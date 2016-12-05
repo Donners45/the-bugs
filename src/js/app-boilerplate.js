@@ -14,7 +14,7 @@ function appStartHandlers($fullPageWrapper){
 		//onLeave: function(index, nextIndex, direction){console.log(index, nextIndex, direction);},
 		afterLoad: function(anchorLink, index){
 			if (index === 2){
-				app.Start();
+				app.Start($('.bug'));
 			}else{
 				app.Terminate();
 			}
