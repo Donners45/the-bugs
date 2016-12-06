@@ -2,13 +2,21 @@
 function bugs(){
 	var interval = null;
 
-	var rnd = function(){
+	var cycleIsTrue = function(f){
 		return (Math.floor((Math.random() * 10) % 2) === 0);
 	};
 
 	var terminate = function(){
 		console.log('kill the bugs');
 		clearInterval(interval);
+
+	};
+
+	var cycleNextSpot = function(bug){
+		$('> .spot.active',bug)
+			.toggleClass('active')
+			.next('.spot')
+			.toggleClass('active');
 	};
 
 	var start = function($bugs){
@@ -16,24 +24,18 @@ function bugs(){
 		var bug2 = 0;
 
 		console.log('release the bugs');
+
+		$('.spot',$bugs).removeClass('active');
+		$('.spot:first-child', $bugs).toggleClass('active');
+
 		interval = setInterval(function(){
-
+			// must allow each iteration a fair chance
 			$bugs.each(function(){
-				console.log('step', bug1, bug2);
-				if (rnd()){
-					$('> .spot.active',this).toggleClass('active').next('.spot').toggleClass('active');
-					bug1++;
-				}
+				console.log('step');
+				console.log($('.spot.active',this).data('space'));
+				if ($('.spot.active', this).data('space') >= 9) {terminate();}
+				if (cycleIsTrue()) {cycleNextSpot(this);}
 			});
-
-
-
-
-			if(bug1 === 10 | bug2 === 10) {
-				terminate();
-				console.log(bug1, bug2);
-			}
-
 		}, 1300);
 	};
 	
